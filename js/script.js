@@ -1,82 +1,105 @@
 (function($) {
-
     "use strict";
 
     $(document).ready(function() {
-      
-      // masonoary //
-
+      // Isotope Grid
       initIsotope();
 
-      // lightbox
+      // Lightbox configuration
+      if (typeof lightbox !== 'undefined') {
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true,
+          'fitImagesInViewport': true
+        });
+      }
 
-      lightbox.option({
-        'resizeDuration': 200,
-        'wrapAround': true,
-        'fitImagesInViewport': true
-      })
-      
-      /* swiper */
-      
-
-      var testimonialSwiper = new Swiper(".testimonial-swiper", {
-        spaceBetween: 20,
-        pagination: {
+      // Testimonial Swiper
+      if (typeof Swiper !== 'undefined') {
+        var testimonialSwiper = new Swiper(".testimonial-swiper", {
+          spaceBetween: 24,
+          pagination: {
             el: ".testimonial-swiper-pagination",
             clickable: true,
           },
-        breakpoints: {
-          0: {
-            slidesPerView: 1,
+          breakpoints: {
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1200: {
+              slidesPerView: 2,
+            }
           },
-          800: {
-            slidesPerView: 3,
-          },
-          1400: {
-            slidesPerView: 3,
+        });
+      }
+
+      // Navbar scroll effect
+      $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 30) {
+          $('.floating-nav').addClass('nav-scrolled');
+        } else {
+          $('.floating-nav').removeClass('nav-scrolled');
+        }
+      });
+      $(window).trigger('scroll');
+
+      // Smooth scroll for hash links
+      $('a[href^="#"]').on('click', function(e) {
+        var targetHref = $(this).attr('href');
+        if (targetHref && targetHref.length > 1 && $(targetHref).length) {
+          e.preventDefault();
+          $('html, body').stop().animate({
+            scrollTop: $(targetHref).offset().top - 80
+          }, 500);
+
+          // Close offcanvas if open
+          var offcanvasEl = document.getElementById('offcanvasNavbar');
+          if (offcanvasEl && typeof bootstrap !== 'undefined') {
+            var bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+            if (bsOffcanvas) {
+              bsOffcanvas.hide();
+            }
           }
-        },
+        }
       });
 
-    }); // End of a document ready
+    }); // End document ready
 
-  // init Isotope
-  var initIsotope = function() {
-    
-    $('.grid').each(function(){
+    // Init Isotope
+    var initIsotope = function() {
+      var $grid = $('.grid');
+      if (!$grid.length) return;
 
-      // $('.grid').imagesLoaded( function() {
-        // images have loaded
-        var $buttonGroup = $( '.button-group' );
+      var onImagesLoaded = function() {
+        var $buttonGroup = $('.button-group');
         var $checked = $buttonGroup.find('.is-checked');
-        var filterValue = $checked.attr('data-filter');
-  
-        var $grid = $('.grid').isotope({
+        var initialFilter = $checked.length ? $checked.attr('data-filter') : '*';
+
+        var isotopeInstance = $grid.isotope({
           itemSelector: '.portfolio-item',
-          // layoutMode: 'fitRows',
-          filter: filterValue
+          percentPosition: true,
+          filter: initialFilter,
+          transitionDuration: '0.4s'
         });
-    
-        // bind filter button click
-        $('.button-group').on( 'click', 'a', function(e) {
+
+        // Filter button click
+        $buttonGroup.on('click', 'a', function(e) {
           e.preventDefault();
-          filterValue = $( this ).attr('data-filter');
-          $grid.isotope({ filter: filterValue });
+          var filterValue = $(this).attr('data-filter');
+          $buttonGroup.find('.is-checked').removeClass('is-checked');
+          $(this).addClass('is-checked');
+          isotopeInstance.isotope({ filter: filterValue });
         });
-    
-        // change is-checked class on buttons
-        $('.button-group').each( function( i, buttonGroup ) {
-          $buttonGroup.on( 'click', 'a', function() {
-            $buttonGroup.find('.is-checked').removeClass('is-checked');
-            $( this ).addClass('is-checked');
-          });
-        });
-      // });
+      };
 
-    });
-  }
-
-
-
+      if (typeof $.fn.imagesLoaded !== 'undefined') {
+        $grid.imagesLoaded(onImagesLoaded);
+      } else {
+        onImagesLoaded();
+      }
+    };
 
 })(jQuery);
