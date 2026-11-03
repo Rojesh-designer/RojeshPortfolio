@@ -91,15 +91,19 @@ body , body  [data-bs-theme=light] {
 }
 
 .bg-yellow {
-    background-color: #FFF9D4 !important;
+    background-color: #f8f6f0 !important;
 }
 
 .bg-green {
-    background-color: #F8F9FA !important;
+    background-color: #f7f8f9 !important;
 }
 
 .bg-teal {
-    background-color: #F1F3F5 !important;
+    background-color: #f3f5f7 !important;
+}
+
+.bg-neutral {
+    background-color: #f5f5f5 !important;
 }
 
 /* Yellow and Black Theme Badges */
@@ -483,12 +487,15 @@ html {
 
 .timeline-badge {
     font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    padding: 0.25rem 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.28rem 0.85rem;
     border-radius: 50px;
     display: inline-block;
     margin-bottom: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.06);
+    color: #333333;
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* Brand Marquee (Infinite Logo Ticker) */
