@@ -9,11 +9,11 @@
 
 :root {
     --bs-blue: #4BA1A7;
-    --bs-red: #F0756C;
-    --bs-orange: #F5E9E9;
-    --bs-yellow: #EFEAEA;
-    --bs-green: #F5F8F1;
-    --bs-teal: #EFE8EF;
+    --bs-red: #FFD000;
+    --bs-orange: #FFF8D6;
+    --bs-yellow: #FFD000;
+    --bs-green: #F8F9FA;
+    --bs-teal: #F1F3F5;
     --bs-cyan: #F3F3F3;
     --bs-black: #111111; 
     --bs-white: #FFFFFF;
@@ -21,25 +21,25 @@
     
     --bs-link-color: #111111;
     --bs-link-color-rgb: 17, 17, 17;
-    --bs-link-hover-color: #F0756C;
-    --bs-link-hover-color-rgb: 240, 117, 108;
+    --bs-link-hover-color: #FFD000;
+    --bs-link-hover-color-rgb: 255, 208, 0;
     
-    --bs-primary: #F0756C;
-    --bs-primary-rgb: 240, 117, 108;
+    --bs-primary: #FFD000;
+    --bs-primary-rgb: 255, 208, 0;
     --bs-body-color: #111111;   
     --bs-info: #C3C3C3; 
     --bs-light-text-emphasis: #c3c3c3;
     
-    --swiper-pagination-color: #F0756C;
+    --swiper-pagination-color: #FFD000;
 }
 
 body , body  [data-bs-theme=light] {
     --bs-blue: #4BA1A7;
-    --bs-red: #F0756C;
-    --bs-orange: #F5E9E9;
-    --bs-yellow: #EFEAEA;
-    --bs-green: #F5F8F1;
-    --bs-teal: #EFE8EF;
+    --bs-red: #FFD000;
+    --bs-orange: #FFF8D6;
+    --bs-yellow: #FFD000;
+    --bs-green: #F8F9FA;
+    --bs-teal: #F1F3F5;
     --bs-cyan: #F3F3F3;
     --bs-black: #111111; 
     --bs-white: #FFFFFF;
@@ -48,14 +48,16 @@ body , body  [data-bs-theme=light] {
 }
 
 .btn-primary {
-    --bs-btn-color: var(--bs-black);
-    --bs-btn-bg: var(--bs-orange);
-    --bs-btn-border-color: var(--bs-orange);
-    --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: var(--bs-black);
-    --bs-btn-hover-border-color: var(--bs-black);
-    --bs-btn-focus-shadow-rgb: 49, 132, 253;
-    --bs-btn-active-bg: var(--bs-black); 
+    --bs-btn-color: #111111;
+    --bs-btn-bg: #FFD000;
+    --bs-btn-border-color: #FFD000;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #111111;
+    --bs-btn-hover-border-color: #111111;
+    --bs-btn-focus-shadow-rgb: 255, 208, 0;
+    --bs-btn-active-bg: #111111;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-border-color: #111111; 
 }
 
 .pagination {
@@ -73,9 +75,9 @@ body , body  [data-bs-theme=light] {
     --bs-pagination-focus-color: var(--bs-link-hover-color);
     --bs-pagination-focus-bg: var(--bs-secondary-bg);
     --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-    --bs-pagination-active-color: var(--bs-black);
-    --bs-pagination-active-bg: #F5E9E9;
-    --bs-pagination-active-border-color: #F5E9E9;
+    --bs-pagination-active-color: #111111;
+    --bs-pagination-active-bg: #FFD000;
+    --bs-pagination-active-border-color: #FFD000;
     --bs-pagination-disabled-color: var(--bs-secondary-color);
     --bs-pagination-disabled-bg: var(--bs-secondary-bg);
     --bs-pagination-disabled-border-color: var(--bs-border-color);
@@ -89,15 +91,29 @@ body , body  [data-bs-theme=light] {
 }
 
 .bg-yellow {
-    background-color: var(--bs-yellow) !important;
+    background-color: #FFF9D4 !important;
 }
 
 .bg-green {
-    background-color: var(--bs-green) !important;
+    background-color: #F8F9FA !important;
 }
 
 .bg-teal {
-    background-color: var(--bs-teal) !important;
+    background-color: #F1F3F5 !important;
+}
+
+/* Yellow and Black Theme Badges */
+.badge-theme {
+    background-color: rgba(255, 208, 0, 0.22) !important;
+    color: #111111 !important;
+    border: 1px solid rgba(255, 208, 0, 0.55);
+    font-weight: 700;
+}
+
+.badge-theme-solid {
+    background-color: #FFD000 !important;
+    color: #111111 !important;
+    font-weight: 700;
 }
 
 .navbar-nav a.nav-link:hover {
@@ -185,7 +201,7 @@ p.a {
 }
 
 .testimonial-card .postd {
-    color: var(--bs-red);
+    color: var(--bs-primary);
 }
 
 
@@ -344,9 +360,9 @@ html {
 
 .btn-pill-cta:hover {
     background: var(--bs-primary);
-    color: #ffffff !important;
+    color: #111111 !important;
     transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(240, 117, 108, 0.35);
+    box-shadow: 0 6px 16px rgba(255, 208, 0, 0.4);
 }
 
 .pill-mobile-toggle {
@@ -414,7 +430,7 @@ html {
 .specialty-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.07);
-    border-color: rgba(240, 117, 108, 0.35);
+    border-color: rgba(255, 208, 0, 0.5);
 }
 
 .specialty-icon-wrapper {
@@ -424,8 +440,8 @@ html {
     align-items: center;
     justify-content: center;
     border-radius: 1rem;
-    background: #FDF3F2;
-    color: var(--bs-primary);
+    background: rgba(255, 208, 0, 0.15);
+    color: #111111;
     margin-bottom: 1.5rem;
     transition: transform 0.3s ease;
 }
@@ -433,11 +449,11 @@ html {
 .specialty-card:hover .specialty-icon-wrapper {
     transform: scale(1.1) rotate(3deg);
     background: var(--bs-primary);
-    color: #ffffff;
+    color: #111111;
 }
 
 .specialty-card:hover .specialty-icon-wrapper svg {
-    color: #ffffff !important;
+    color: #111111 !important;
 }
 
 .tag-badge {
@@ -586,7 +602,7 @@ html {
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #ffffff;
+    color: #111111;
     background: var(--bs-primary);
     padding: 4px 12px;
     border-radius: 50px;
@@ -645,10 +661,10 @@ html {
 }
 
 .button-group .btn.is-checked {
-    background-color: #111111 !important;
-    border-color: #111111 !important;
-    color: #ffffff !important;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    background-color: #FFD000 !important;
+    border-color: #FFD000 !important;
+    color: #111111 !important;
+    box-shadow: 0 6px 18px rgba(255, 208, 0, 0.3);
 }
 
 /* Contact Section */
@@ -673,7 +689,7 @@ html {
 .contact-input:focus {
     background: rgba(255, 255, 255, 0.12);
     border-color: var(--bs-primary);
-    box-shadow: 0 0 0 0.25rem rgba(240, 117, 108, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(255, 208, 0, 0.25);
     outline: none;
 }
 
@@ -697,6 +713,6 @@ html {
 
 .social-btn:hover {
     background: var(--bs-primary);
-    color: #ffffff;
+    color: #111111;
     transform: translateY(-3px);
 }
