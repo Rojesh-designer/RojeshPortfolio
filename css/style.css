@@ -496,10 +496,10 @@ html {
     overflow: hidden;
     white-space: nowrap;
     background: transparent;
-    padding: 18px 0;
+    padding: 24px 0;
     position: relative;
-    mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 .logo-track {
@@ -519,18 +519,18 @@ html {
 }
 
 .logo-track img {
-    height: 52px;
+    height: 80px;
     width: auto;
-    max-width: 140px;
+    max-width: 210px;
     object-fit: contain;
-    margin: 0 34px;
-    filter: grayscale(100%) opacity(0.65);
+    margin: 0 42px;
+    filter: grayscale(100%) opacity(0.8);
     transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .logo-track img:hover {
     filter: grayscale(0%) opacity(1);
-    transform: scale(1.15);
+    transform: scale(1.12);
     cursor: pointer;
 }
 
